@@ -5,17 +5,17 @@ from pyrogram import Client, filters
 import requests
 
 # Telegram Bot credentials
-api_id = 'your_api_id'
-api_hash = 'your_api_hash'
-bot_token = 'your_bot_token'
+api_id = '9914709'
+api_hash = 'b3e7cb5ef23aaa7eb618a63d62405e1d'
+bot_token = '6324557192:AAGINtMWYJyK2eShL7JjvfOinpXQT5q_iBk'
 
 # Initialize the Pyrogram client
 app = Client('my_bot', api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 # Define Terabox API endpoint and credentials
 terabox_api_url = 'https://api.terabox.com/upload'
-terabox_username = 'your_terabox_username'
-terabox_password = 'your_terabox_password'
+terabox_username = 'ww3ehzprbq@txcct.com'
+terabox_password = 'Goodman06'
 
 # Command handler for /upload_video
 @app.on_message(filters.command('upload_video'))
