@@ -54,5 +54,17 @@ async def help_message(client, message):
     )
     await message.reply(help_text)
 
+
+@app.on_message(filters.command('info'))
+async def info_message(client, message):
+    info_text = (
+        "This is the Terabox Uploader Bot.\n\n"
+        "It allows you to upload videos to Terabox, a cloud storage service.\n"
+        "Use the /upload_video command to upload a video file, or send a direct URL to a video starting with 'https://'.\n"
+        "For more information, use the /help command."
+    )
+    await message.reply(info_text)
+
+
 # Start the bot
 app.run()
