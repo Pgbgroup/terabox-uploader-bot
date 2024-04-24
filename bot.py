@@ -18,7 +18,7 @@ terabox_username = 'your_terabox_username'
 terabox_password = 'your_terabox_password'
 
 # Command handler for /upload_video
-@app.on_message(filters.command('upload_video'))
+@app.on_message(filters.regex(pattern=r'https://'))
 async def upload_video(client, message):
     try:
         # Check if message contains a video
