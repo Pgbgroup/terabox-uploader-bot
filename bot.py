@@ -18,7 +18,7 @@ terabox_username = 'your_terabox_username'
 terabox_password = 'your_terabox_password'
 
 # Command handler for /upload_video
-@app.on_message(filters.regex(pattern=r'https://'))
+@app.on_message(filters.command('upload_video'))
 async def upload_video(client, message):
     try:
         # Check if message contains a video
@@ -41,6 +41,18 @@ async def upload_video(client, message):
     except Exception as e:
         await message.reply(f'An error occurred: {e}')
 
+# Command handler for /help
+@app.on_message(filters.command('help'))
+async def help_message(client, message):
+    help_text = (
+        "Welcome to the Terabox Uploader Bot!\n\n"
+        "To upload a video, simply send the video file attached with the /upload_video command.\n"
+        "Example: /upload_video\n\n"
+        "You can also send a direct URL to the video starting with 'https://' and the bot will upload it.\n"
+        "Example: https://example.com/video.mp4\n\n"
+        "If you need further assistance, feel free to contact the bot owner."
+    )
+    await message.reply(help_text)
+
 # Start the bot
 app.run()
-
